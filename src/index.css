@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.bengali-text {
+    font-family: 'Noto Sans Bengali', sans-serif;
+}
+
+/* Hide scrollbars inside the phone for a cleaner look */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+}
+
+/* Global scrollbar removal for demo (mobile-like) */
+* {
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary hover:bg-primary-light text-white font-medium py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary hover:bg-secondary-light text-white font-medium py-3 px-6 rounded-xl transition-all duration-300;
+    }
+
+    .card {
+        @apply bg-white rounded-2xl shadow-lg p-6;
+    }
+
+    .input-field {
+        @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors;
+    }
+}
+
+/* Phone mockup animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.phone-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Screen transitions */
+.screen-transition {
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
