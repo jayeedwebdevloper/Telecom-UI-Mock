@@ -1,4 +1,4 @@
-import { Search, Plus, EyeOff, Pencil, Trash2 } from 'lucide-react';
+import { Search, EyeOff, Pencil, Trash2 } from 'lucide-react';
 
 const PackageManagementScreen = () => {
     return (

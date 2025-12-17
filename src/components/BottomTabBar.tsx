@@ -1,11 +1,10 @@
-import { Home, Package, History, Wallet, User, LayoutDashboard, Users, Bell } from 'lucide-react';
+import { Home, Package, History, User, LayoutDashboard, Users } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const CUSTOMER_TABS = [
     { to: '/home', label: 'Home', icon: <Home size={20} /> },
     { to: '/packages', label: 'Packages', icon: <Package size={20} /> },
     { to: '/orders', label: 'Orders', icon: <History size={20} /> },
-    // { to: '/add-balance', label: 'Balance', icon: <Wallet size={20} /> },
     { to: '/profile', label: 'Profile', icon: <User size={20} /> },
 ];
 
@@ -14,7 +13,6 @@ const ADMIN_TABS = [
     { to: '/admin/users', label: 'Users', icon: <Users size={20} /> },
     { to: '/admin/orders', label: 'Orders', icon: <History size={20} /> },
     { to: '/admin/packages', label: 'Packages', icon: <Package size={20} /> },
-    // { to: '/admin/notifications', label: 'Notifications', icon: <Bell size={20} /> },
 ];
 
 export default function BottomTabBar() {
