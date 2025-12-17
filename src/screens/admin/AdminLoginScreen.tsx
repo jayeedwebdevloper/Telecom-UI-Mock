@@ -20,7 +20,7 @@ const AdminLoginScreen = () => {
                             Admin Email
                         </label>
                         <div className="relative">
-                            <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70" size={20} />
+                            <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black/70" size={20} />
                             <input
                                 type="email"
                                 placeholder="admin@example.com"
@@ -35,7 +35,7 @@ const AdminLoginScreen = () => {
                             Password
                         </label>
                         <div className="relative">
-                            <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/70" size={20} />
+                            <Lock className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black/70" size={20} />
                             <input
                                 type="password"
                                 placeholder="Enter password"

@@ -83,7 +83,7 @@ const LoginScreen = () => {
                 </form>
             </div>
 
-            <div className="text-center pb-6">
+            <div className="text-center pb-6 pt-5">
                 <p className="text-gray-600">
                     Don't have an account?{' '}
                     <Link to="/register" className="text-primary font-semibold hover:underline">

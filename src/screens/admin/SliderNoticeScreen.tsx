@@ -21,7 +21,7 @@ const SliderNoticeScreen = () => {
             <div className="px-6 -mt-4 pb-6 space-y-4">
                 <div className="bg-white rounded-2xl p-5 shadow border border-gray-100">
                     <h3 className="text-gray-900 font-bold mb-3">Slider Images</h3>
-                    <div className="flex flex-col sm:flex-row gap-3">
+                    <div className="flex flex-col  gap-3">
                         <input value={url} onChange={(e) => setUrl(e.target.value)} className="flex-1 px-4 py-3 rounded-xl bg-slate-50 text-gray-900 border-2 border-gray-200 focus:border-secondary focus:outline-none" placeholder="Paste image URL (https://...)" />
                         <button onClick={addImage} className="bg-secondary hover:bg-green-500 text-white px-4 py-3 rounded-xl font-semibold flex items-center gap-2 whitespace-nowrap"><ImagePlus size={18} /> Add Image</button>
                     </div>

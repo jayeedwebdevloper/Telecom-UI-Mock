@@ -21,10 +21,10 @@ const UsersManagementScreen = () => {
                         <span className="text-xs bg-secondary/20 text-secondary px-3 py-1 rounded-full">Active</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><Shield size={16} /> Reset Password</button>
-                        <button className="bg-error hover:bg-red-600 text-white text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><Ban size={16} /> Block</button>
-                        <button className="bg-secondary hover:bg-green-500 text-white text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><UserPlus size={16} /> Add Balance</button>
-                        <button className="bg-warning hover:bg-amber-500 text-white text-xs sm:text-sm px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><UserMinus size={16} /> Minus Balance</button>
+                        <button className="bg-gray-200 hover:bg-gray-300 text-gray-900 text-xs px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><Shield size={16} /> Reset Password</button>
+                        <button className="bg-error hover:bg-red-600 text-white text-xs px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><Ban size={16} /> Block</button>
+                        <button className="bg-secondary hover:bg-green-500 text-white text-xs px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><UserPlus size={16} /> Add Balance</button>
+                        <button className="bg-warning hover:bg-amber-500 text-white text-xs px-3 py-2 rounded-lg flex items-center gap-1 whitespace-nowrap"><UserMinus size={16} /> Minus Balance</button>
                     </div>
                 </div>
             </div>

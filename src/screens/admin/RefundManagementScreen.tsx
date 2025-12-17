@@ -16,7 +16,7 @@ const RefundManagementScreen = () => {
                                 <p className="text-gray-600 text-sm">{r.user}</p>
                                 <p className="text-gray-700 text-xs mt-1">Reason: {r.reason}</p>
                             </div>
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-col">
                                 <button className="bg-secondary/20 text-secondary px-3 py-2 rounded-lg text-sm flex items-center gap-1"><CheckCircle size={16} /> Accept</button>
                                 <button className="bg-error/20 text-error px-3 py-2 rounded-lg text-sm flex items-center gap-1"><XCircle size={16} /> Reject</button>
                             </div>

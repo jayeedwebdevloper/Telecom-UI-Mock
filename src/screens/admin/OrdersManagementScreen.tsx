@@ -20,9 +20,9 @@ const OrdersManagementScreen = () => {
                                 <p className="text-gray-600 text-sm">User: Sara Khan · ৳99 · 2024-01-15 14:20</p>
                             </div>
                             <div className="flex flex-wrap gap-2 justify-end">
-                                <button className="bg-secondary/20 text-secondary px-3 py-2 rounded-lg text-xs sm:text-sm flex items-center gap-1 whitespace-nowrap"><CheckCircle size={16} /> Complete</button>
-                                <button className="bg-error/20 text-error px-3 py-2 rounded-lg text-xs sm:text-sm flex items-center gap-1 whitespace-nowrap"><XCircle size={16} /> Cancel</button>
-                                <button className="bg-warning/20 text-warning px-3 py-2 rounded-lg text-xs sm:text-sm flex items-center gap-1 whitespace-nowrap"><RotateCcw size={16} /> Refund</button>
+                                <button className="bg-secondary/20 text-secondary px-3 py-2 rounded-lg text-xs flex items-center gap-1 whitespace-nowrap"><CheckCircle size={16} /> Complete</button>
+                                <button className="bg-error/20 text-error px-3 py-2 rounded-lg text-xs flex items-center gap-1 whitespace-nowrap"><XCircle size={16} /> Cancel</button>
+                                <button className="bg-warning/20 text-warning px-3 py-2 rounded-lg text-xs flex items-center gap-1 whitespace-nowrap"><RotateCcw size={16} /> Refund</button>
                             </div>
                         </div>
                     </div>
