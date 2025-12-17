@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { Smartphone } from 'lucide-react';
 
 const SplashScreen = () => {
     return (
         <div className="h-full bg-gradient-to-br from-primary via-primary-light to-info flex flex-col items-center justify-center p-8">
             <div className="text-center animate-pulse">
                 <div className="bg-white rounded-full p-8 mb-8 shadow-2xl">
-                    <Smartphone size={80} className="text-primary" />
+                    LOGO
                 </div>
                 <h1 className="text-4xl font-bold text-white mb-4">
                     TelePack

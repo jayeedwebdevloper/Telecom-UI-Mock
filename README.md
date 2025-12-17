@@ -100,6 +100,44 @@ Use the navigation buttons at the top of the page to explore different screens:
 2. **Dashboard** - Statistics and recent activity
 3. **Balance Management** - Approve/reject balance requests
 
+## 📊 Admin Metrics (MongoDB, R2, Transactions)
+
+The Admin Dashboard displays:
+- MongoDB storage usage (used / total)
+- Cloudflare R2 storage usage (used / total)
+- Total transactions count
+
+These values are fetched from a backend endpoint or mocked via environment variables.
+
+### Configure Backend Endpoint
+
+Provide an endpoint returning JSON compatible with:
+
+```json
+{
+  "usersTotal": 12458,
+  "mongo": { "usedBytes": 12345678901, "totalBytes": 50000000000 },
+  "r2": { "usedBytes": 8765432109, "totalBytes": 25000000000 },
+  "transactionsTotal": 9876
+}
+```
+
+Set the URL via Vite env:
+
+```bash
+echo "VITE_ADMIN_METRICS_URL=https://your.api/admin/metrics" > .env.local
+```
+
+### Use Mock Data (no backend)
+
+To use built-in mock values during development:
+
+```bash
+echo "VITE_USE_MOCK=1" > .env.local
+```
+
+When `VITE_USE_MOCK` is enabled, the dashboard will render without calling any backend.
+
 ## 📦 Build for Production
 
 ```bash

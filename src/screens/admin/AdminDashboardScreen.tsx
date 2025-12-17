@@ -1,12 +1,57 @@
-import { TrendingUp, Users, Wallet, ShoppingCart, ArrowUpRight, ArrowDownRight } from 'lucide-react';
+import { Users, Database, Cloud, Receipt, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { fetchAdminMetrics, AdminMetrics } from '../../api/admin';
+import { formatBytes, formatNumber, percent } from '../../utils/format';
 
 const AdminDashboardScreen = () => {
+    const [metrics, setMetrics] = useState<AdminMetrics>({});
+
+    useEffect(() => {
+        let mounted = true;
+        fetchAdminMetrics().then((m) => {
+            if (mounted) setMetrics(m);
+        });
+        return () => { mounted = false; };
+    }, []);
+
+    const mongoUsed = formatBytes(metrics.mongo?.usedBytes);
+    const mongoTotal = formatBytes(metrics.mongo?.totalBytes);
+    const mongoPct = percent(metrics.mongo?.usedBytes, metrics.mongo?.totalBytes);
+
+    const r2Used = formatBytes(metrics.r2?.usedBytes);
+    const r2Total = formatBytes(metrics.r2?.totalBytes);
+    const r2Pct = percent(metrics.r2?.usedBytes, metrics.r2?.totalBytes);
+
     const stats = [
-        { label: 'Total Users', value: '12,458', change: '+12.5%', trend: 'up', icon: <Users size={24} />, color: 'bg-blue-500' },
-        { label: 'Total Balance', value: '৳2.4M', change: '+8.2%', trend: 'up', icon: <Wallet size={24} />, color: 'bg-secondary' },
-        { label: 'Daily Sales', value: '৳45,678', change: '-2.4%', trend: 'down', icon: <ShoppingCart size={24} />, color: 'bg-warning' },
-        { label: 'Monthly Sales', value: '৳892K', change: '+15.8%', trend: 'up', icon: <TrendingUp size={24} />, color: 'bg-info' },
+        {
+            label: 'Total Users',
+            value: formatNumber(metrics.usersTotal),
+            change: '',
+            trend: 'up',
+            icon: <Users size={24} />, color: 'bg-blue-500'
+        },
+        {
+            label: 'MongoDB Storage',
+            value: `${mongoUsed} / ${mongoTotal}`,
+            change: mongoPct !== undefined ? `${mongoPct}% used` : '',
+            trend: 'up',
+            icon: <Database size={24} />, color: 'bg-secondary'
+        },
+        {
+            label: 'Cloudflare R2 Storage',
+            value: `${r2Used} / ${r2Total}`,
+            change: r2Pct !== undefined ? `${r2Pct}% used` : '',
+            trend: 'up',
+            icon: <Cloud size={24} />, color: 'bg-warning'
+        },
+        {
+            label: 'Total Transactions',
+            value: formatNumber(metrics.transactionsTotal),
+            change: '',
+            trend: 'up',
+            icon: <Receipt size={24} />, color: 'bg-info'
+        },
     ];
 
     const recentOrders = [
@@ -34,14 +79,18 @@ const AdminDashboardScreen = () => {
                             <p className="text-gray-600 text-xs mb-1">{stat.label}</p>
                             <p className="text-gray-900 text-xl font-bold mb-2">{stat.value}</p>
                             <div className="flex items-center gap-1">
-                                {stat.trend === 'up' ? (
-                                    <ArrowUpRight size={16} className="text-secondary" />
-                                ) : (
-                                    <ArrowDownRight size={16} className="text-error" />
-                                )}
-                                <span className={`text-xs font-medium ${stat.trend === 'up' ? 'text-secondary' : 'text-error'}`}>
-                                    {stat.change}
-                                </span>
+                                {stat.change ? (
+                                    <>
+                                        {stat.trend === 'up' ? (
+                                            <ArrowUpRight size={16} className="text-secondary" />
+                                        ) : (
+                                            <ArrowDownRight size={16} className="text-error" />
+                                        )}
+                                        <span className={`text-xs font-medium ${stat.trend === 'up' ? 'text-secondary' : 'text-error'}`}>
+                                            {stat.change}
+                                        </span>
+                                    </>
+                                ) : null}
                             </div>
                         </div>
                     ))}

@@ -19,7 +19,6 @@ import OrdersManagementScreen from './screens/admin/OrdersManagementScreen';
 import PackageManagementScreen from './screens/admin/PackageManagementScreen';
 import OperatorManagementScreen from './screens/admin/OperatorManagementScreen';
 import RefundManagementScreen from './screens/admin/RefundManagementScreen';
-import NotificationScreen from './screens/admin/NotificationScreen';
 import SliderNoticeScreen from './screens/admin/SliderNoticeScreen';
 import SystemSecurityScreen from './screens/admin/SystemSecurityScreen';
 import { Menu } from 'lucide-react';
@@ -73,7 +72,6 @@ function App() {
                             <NavButton to="/admin/packages" label="Package Mgmt" />
                             <NavButton to="/admin/operators" label="Operators" />
                             <NavButton to="/admin/refunds" label="Refunds" />
-                            <NavButton to="/admin/notifications" label="Notifications" />
                             <NavButton to="/admin/slider" label="Slider & Notice" />
                             <NavButton to="/admin/system" label="System & Security" />
                         </div>
@@ -103,7 +101,6 @@ function App() {
                             <Route path="/admin/packages" element={<PackageManagementScreen />} />
                             <Route path="/admin/operators" element={<OperatorManagementScreen />} />
                             <Route path="/admin/refunds" element={<RefundManagementScreen />} />
-                            <Route path="/admin/notifications" element={<NotificationScreen />} />
                             <Route path="/admin/slider" element={<SliderNoticeScreen />} />
                             <Route path="/admin/system" element={<SystemSecurityScreen />} />
                         </Routes>
